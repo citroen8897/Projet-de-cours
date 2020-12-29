@@ -6,7 +6,6 @@ def main():
         file_data_base = open('user_d_b.txt')
     except FileNotFoundError:
         file_data_base = open('user_d_b.txt', 'w')
-        file_data_base.close()
         list_de_users = []
     else:
         list_de_users = []
@@ -15,6 +14,7 @@ def main():
             d_temp = {'numero': list_temp[0], 'telephone': list_temp[1],
                       'e-mail': list_temp[2], 'password': list_temp[3]}
             list_de_users.append(d_temp)
+    finally:
         file_data_base.close()
 
     langue_data_base = langue()
