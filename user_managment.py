@@ -18,7 +18,7 @@ def main():
         file_data_base.close()
 
     langue_data_base = langue()
-    print(f'S.P.Q.R\n{langue_data_base[3]}')
+    print(f'S.P.Q.R.\n{langue_data_base[3]}')
     f_1(langue_data_base, list_de_users)
 
 
