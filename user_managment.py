@@ -2,10 +2,24 @@ import re
 
 
 def main():
-    L = []
+    try:
+        file_data_base = open('user_d_b.txt')
+    except FileNotFoundError:
+        file_data_base = open('user_d_b.txt', 'w')
+        file_data_base.close()
+        list_de_users = []
+    else:
+        list_de_users = []
+        for a in file_data_base.readlines():
+            list_temp = a.split()
+            d_temp = {'numero': list_temp[0], 'telephone': list_temp[1],
+                      'e-mail': list_temp[2], 'password': list_temp[3]}
+            list_de_users.append(d_temp)
+        file_data_base.close()
+
     langue_data_base = langue()
     print(f'S.P.Q.R\n{langue_data_base[3]}')
-    f_1(langue_data_base, L)
+    f_1(langue_data_base, list_de_users)
 
 
 def f_1(langue_data_base, list_d_b):
@@ -39,6 +53,13 @@ def f_1(langue_data_base, list_d_b):
 
     else:
         input(f'{langue_data_base[19]}')
+        file_data_base = open('user_d_b.txt', 'w')
+        for element in list_d_b:
+            file_data_base.write(str(element.get('numero')) + ' ')
+            file_data_base.write(str(element.get('telephone')) + ' ')
+            file_data_base.write(str(element.get('e-mail')) + ' ')
+            file_data_base.write(str(element.get('password')) + '\n')
+        file_data_base.close()
         exit()
 
 
@@ -60,6 +81,8 @@ def f_2(langue_data_base, list_d_b):
                 return f_1(langue_data_base, list_d_b)
             elif user_select_trois == f'{langue_data_base[24]}':
                 return f_3(langue_data_base, list_d_b)
+            else:
+                return f_1(langue_data_base, list_d_b)
         else:
             return f_1(langue_data_base, list_d_b)
     else:
