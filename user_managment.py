@@ -93,6 +93,9 @@ def f_2(langue_data_base, list_d_b):
 def f_3(langue_data_base, list_d_b):
     try:
         user_select_quatre = int(input(f'{langue_data_base[28]}'))
+        if user_select_quatre > len(list_d_b):
+            print(f'{langue_data_base[29]}')
+            return f_3(langue_data_base, list_d_b)
     except ValueError:
         print(f'{langue_data_base[29]}')
         return f_3(langue_data_base, list_d_b)
