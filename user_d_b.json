@@ -1,20 +1,26 @@
 [
     {
-        "numero": "1",
-        "telephone": "+380506188158",
-        "e-mail": "citroen8897@gmail.com",
-        "password": "1234QwE_"
-    },
-    {
-        "numero": "2",
+        "numero": 1,
         "telephone": "+380506999638",
         "e-mail": "m_412@i.ua",
         "password": "rjhxbreo"
     },
     {
-        "numero": "3",
+        "numero": 2,
         "telephone": "+380675775572",
         "e-mail": "katkova@i.ua",
         "password": "123456Q!q"
+    },
+    {
+        "numero": 3,
+        "telephone": "+380993281556",
+        "e-mail": "l_katkov@yandex.ua",
+        "password": "KX_t_71-37"
+    },
+    {
+        "numero": 4,
+        "telephone": "+380667534007",
+        "e-mail": "test5@i.ua",
+        "password": "qwertY_1"
     }
 ]
