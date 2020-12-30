@@ -22,5 +22,11 @@
         "telephone": "+380667534007",
         "e-mail": "test5@i.ua",
         "password": "qwertY_1"
+    },
+    {
+        "numero": "5",
+        "telephone": "+380503847174",
+        "e-mail": "C3@fox.fr",
+        "password": "qW_12345"
     }
 ]
