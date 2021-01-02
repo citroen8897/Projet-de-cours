@@ -87,7 +87,7 @@ def parole_de_user(symbols, lenght):
     for symbol in symbols:
         if symbol not in password:
             print(f'Пароль неверно сгенерирован: {password}')
-            return parole_de_user(symbol, lenght)
+            return parole_de_user(symbols, lenght)
 
     return password
 
