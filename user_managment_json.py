@@ -1,5 +1,7 @@
 import re
 import json
+import password_gen_grand_plus
+import languages
 
 
 def main():
@@ -136,7 +138,6 @@ def change_password_delete_user(langue_data_base, data_base_des_users,
                                            data_base_des_users, current_user)
     
     elif user_select_6 == '4':
-        import password_gen_grand_plus
         new_password = password_gen_grand_plus.main()
         info_de_user = {'numero':
                         data_base_des_users[current_user].get('numero'),
@@ -178,21 +179,20 @@ def change_password_delete_user(langue_data_base, data_base_des_users,
 
 
 def get_langue():
-    from languages import langue_data_base_plus
-    user_select_langue = input(f'{langue_data_base_plus.get("russian")[0]}\n'
-                               f'{langue_data_base_plus.get("francaise")[0]}\n'
-                               f'{langue_data_base_plus.get("russian")[1]}/'
-                               f'{langue_data_base_plus.get("francaise")[1]}\n'
-                               f'{langue_data_base_plus.get("russian")[2]}/'
-                               f'{langue_data_base_plus.get("francaise")[2]}: '
-                               )
+    user_select_langue = input(
+        f'{languages.langue_data_base_plus.get("russian")[0]}\n'
+        f'{languages.langue_data_base_plus.get("francaise")[0]}\n'
+        f'{languages.langue_data_base_plus.get("russian")[1]}/'
+        f'{languages.langue_data_base_plus.get("francaise")[1]}\n'
+        f'{languages.langue_data_base_plus.get("russian")[2]}/'
+        f'{languages.langue_data_base_plus.get("francaise")[2]}: ')
     if user_select_langue not in ('рус', 'fra'):
         return get_langue()
 
     if user_select_langue == 'рус':
-        langue_data_base_plus = langue_data_base_plus.get('russian')
+        langue_data_base_plus = languages.langue_data_base_plus.get('russian')
     else:
-        langue_data_base_plus = langue_data_base_plus.get('francaise')
+        langue_data_base_plus = languages.langue_data_base_plus.get('francaise')
 
     return langue_data_base_plus
 
